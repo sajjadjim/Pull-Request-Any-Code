@@ -1,0 +1,33 @@
+function getNumbers(): number[] {
+    const input = prompt("Enter numbers separated by spaces:");
+    return input ? input.split(" ").map(Number) : [];
+}
+
+function calculateSum(numbers: number[]): number {
+    return numbers.reduce((sum, num) => sum + num, 0);
+}
+
+function calculateAverage(numbers: number[]): number {
+    return numbers.length ? calculateSum(numbers) / numbers.length : 0;
+}
+
+function findLargest(numbers: number[]): number | null {
+    return numbers.length ? Math.max(...numbers) : null;
+}
+
+function findSmallest(numbers: number[]): number | null {
+    return numbers.length ? Math.min(...numbers) : null;
+}
+
+function main(): void {
+    const numbers = getNumbers();
+    
+    console.log("\nResults:");
+    console.log("Numbers:", numbers);
+    console.log("Sum:", calculateSum(numbers));
+    console.log("Average:", calculateAverage(numbers).toFixed(2));
+    console.log("Largest:", findLargest(numbers));
+    console.log("Smallest:", findSmallest(numbers));
+}
+
+main();
