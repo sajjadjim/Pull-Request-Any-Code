@@ -7,5 +7,5 @@ console.log("My name is Jim");
 
 if (1>2)
 {
-    console.log(Large number)
+    console.log("Large Number");
 }
